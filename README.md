@@ -1,54 +1,40 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite で作成したシンプルなTodoアプリ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+これはReactの学習用に作成された、基本的なTodoリストアプリケーションです。ViteとTypeScriptを使用しています。
 
-Currently, two official plugins are available:
+## 機能
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Todoの新規追加
+- Todoの完了・未完了の切り替え
+- Todoの削除
 
-## Expanding the ESLint configuration
+## プロジェクト構成
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+このアプリケーションの主要なファイルは `src` ディレクトリ内にあります。
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+-   `src/App.tsx`:
+    アプリケーションのメインコンポーネントです。Todoリストの状態管理、ユーザー操作（追加、更新、削除）のロジック、そしてUIのレンダリングをすべてこのファイルで行っています。学習しやすいように、コードの各部分には詳細な日本語のコメントが付与されています。
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+-   `src/App.css`:
+    `App` コンポーネント専用のスタイルシートです。Todoリストの見た目を整えるためのCSSが記述されています。
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+-   `src/index.css`:
+    アプリケーション全体に適用されるグローバルなスタイルシートです。基本的なフォント設定などが含まれています。レイアウトの問題を修正するために、一部のスタイルを削除しました。
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+-   `src/main.tsx`:
+    このアプリケーションのエントリーポイントです。ReactアプリケーションをHTMLの `#root` 要素にマウントします。
+
+## 実行方法
+
+1.  **依存関係のインストール**:
+    プロジェクトのルートディレクトリで以下のコマンドを実行し、必要なパッケージをインストールします。
+    ```bash
+    npm install
+    ```
+
+2.  **開発サーバーの起動**:
+    以下のコマンドで開発サーバーを起動します。
+    ```bash
+    npm run dev
+    ```
+    サーバーが起動すると、ターミナルに表示されるローカルアドレス（例: `http://localhost:5173`）にブラウザでアクセスすると、アプリケーションが表示されます。
