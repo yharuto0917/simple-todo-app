@@ -1,42 +1,99 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+/* 全体のコンテナのスタイル */
+.app-container {
+  max-width: 600px; /* アプリ全体の最大幅を設定 */
+  margin: 2rem auto; /* 中央揃え */
   padding: 2rem;
+  background-color: #f4f4f9; /* 背景色を少し柔らかく */
+  border-radius: 8px; /* 角を丸くする */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を出す */
+  font-family: sans-serif; /* 読みやすいフォントに */
+}
+
+/* アプリのタイトルのスタイル */
+.app-title {
   text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* 入力エリアのスタイル */
+.input-container {
+  display: flex; /* 横並びにする */
+  margin-bottom: 1.5rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Todo入力欄のスタイル */
+.todo-input {
+  flex-grow: 1; /* 残りのスペースをすべて使う */
+  padding: 0.8rem;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-right: 0.5rem; /* ボタンとの間に余白 */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* 追加ボタンのスタイル */
+.add-button {
+  padding: 0.8rem 1.2rem;
+  background-color: #5c6bc0; /* ボタンの背景色 */
+  color: white; /* 文字色を白に */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer; /* マウスカーソルを指マークに */
+  font-size: 1rem;
+  transition: background-color 0.2s; /* ホバー時の色の変化を滑らかに */
 }
 
-.card {
-  padding: 2em;
+.add-button:hover {
+  background-color: #3f51b5; /* ホバー時の色を少し濃く */
 }
 
-.read-the-docs {
-  color: #888;
+/* Todoリスト全体のスタイル */
+.todo-list {
+  list-style-type: none; /* リストの黒点を消す */
+  padding: 0;
+  margin: 0;
+}
+
+/* 各Todoアイテムのスタイル */
+.todo-item {
+  display: flex;
+  align-items: center; /* 縦方向の中央揃え */
+  background-color: #fff;
+  padding: 1rem;
+  border-bottom: 1px solid #eee; /* アイテム間の区切り線 */
+  transition: background-color 0.2s;
+}
+
+.todo-item:last-child {
+  border-bottom: none; /* 最後のアイテムの区切り線は消す */
+}
+
+/* Todoテキストのスタイル */
+.todo-text {
+  flex-grow: 1;
+  cursor: pointer;
+  user-select: none; /* テキスト選択を無効に */
+}
+
+/* 完了したTodoのスタイル */
+.todo-item.completed .todo-text {
+  text-decoration: line-through; /* 取り消し線 */
+  color: #999; /* 文字色を薄く */
+}
+
+/* 削除ボタンのスタイル */
+.delete-button {
+  background-color: #ef5350; /* 削除ボタンの背景色 */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f; /* ホバー時の色を濃く */
 }
